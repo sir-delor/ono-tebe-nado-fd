@@ -18,8 +18,6 @@
 
 html,
 body {
-  /* height: 100%; 
-  position: relative; */
   background-color: #fff;
   font-family: "Raleway", sans-serif;
   font-weight: 400;
@@ -29,7 +27,7 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "Raleway";
+  font-family: "Raleway", sans-serif;
   font-weight: 700;
 }
 
@@ -48,7 +46,7 @@ h3 {
 .header__content {
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
-  padding: 90px 50px 94px;
+  padding: 88px 50px 96px;
 }
 
 /* Лого header */
@@ -74,9 +72,9 @@ h3 {
 .menu__header {
   display: flex;
   gap: 31px;
-  padding-top: 45px;
+  padding-top: 47px;
   list-style-type: circle;
-  letter-spacing: 0.074em;
+  letter-spacing: 0.076em;
   text-underline-position: under;
 }
 
@@ -86,15 +84,18 @@ h3 {
 }
 
 .contact-text {
+  display: grid;
   width: 239px;
+  padding-top: 7px;
   line-height: 1.35;
-  padding-top: 6px;
   font-size: 18px;
   font-style: normal;
+  text-underline-position: under;
 }
 
 .block_background {
-  /* min-height: 757px; */
+  display: flex;
+  min-height: 757px;
   background-image: url("../images/cover.jpg");
   background-size: cover;
   background-position: center;
@@ -103,18 +104,19 @@ h3 {
 
 /* Затенение картинки блока cover*/
 .filters__background {
-  height: 757px;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
 }
 
 .text_cover {
-  padding: 155px 20px 96px 51px;
+  padding: 155px 20px 85px 51px;
   letter-spacing: 31px;
   font-size-adjust: 0.51;
 }
 
 .text-title {
-  line-height: 1.35; /* Увеличиваем расстояние между строками */
+  line-height: 1.349; /* Увеличиваем расстояние между строками */
   text-transform: uppercase;
 }
 
@@ -135,30 +137,24 @@ h3 {
 
 .bet_button {
   display: flex;
-  padding: 0 49px 39px 50px;
-  word-spacing: 0.84em;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 28px;
-  text-align: left;
-  justify-content: flex-start;
+  padding: 0 25px 40px 50px;
 }
 
 .cta-container {
-  padding-top: 12px;
+  padding-top: 25px;
+  font-size: 22px;
+  word-spacing: 0.85em;
+  text-align: justify;
+  /* letter-spacing: 0.0656em; */
 }
 
 /* Стиль для кнопки */
 .button {
-  margin-left: 107px;
-  bottom: -315px;
-  right: 49px;
+  margin: 11px 10px 10px 107px;
   background-color: transparent;
   border: 1px solid #fff;
   color: #fff;
-  padding: 12px 32px;
-  cursor: pointer;
-  font-weight: 400;
+  padding: 12px 31px 11px;
   font-size: 22px;
   transition: all 0.3s ease;
 }
@@ -180,7 +176,7 @@ button:hover,
   gap: 25px;
 }
 
-/* Секция с карточками лотов */
+/*     Секция с карточками лотов    */
 .title-lot {
   padding: 0 0 27px 64px;
   text-transform: uppercase;
@@ -188,30 +184,29 @@ button:hover,
 
 .lots__cards-list {
   display: flex;
-  gap: 24px;
-  list-style-type: none;
-  padding: 0 25px 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 24px;
+  padding: 0;
+  list-style: none;
+  color: white;
 }
 
 .lots__card-list-item {
-  min-width: 334px;
-  color: white;
-  background-position: center;
-  background-size: cover;
-}
-
-.card-link {
-  height: 100%;
+  flex: 1 1 32%; /* каждая карточка занимает ~32% ширины */
+  max-width: 334px; /* минимальная ширина карточки (чтобы не сжимались слишком сильно) */
+  margin: 0 0 20px; /* отступы: сверху 0, по бокам 10px, снизу 20px */
+  box-sizing: border-box;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.6);
-  min-width: 334px;
-  min-height: 596px;
+  width: 334px;
+  height: 596px;
   justify-content: space-between;
-  padding: 48px 40px;
+  padding: 48px 40px 48px 39px;
 }
 
 .card__title {
@@ -223,6 +218,14 @@ button:hover,
 .card__text {
   font-size: 20px;
   line-height: 120%;
+}
+
+.style_img_lot {
+  width: 100%;
+  height: 596px; /* выота карточки */
+  background-position: center; /* центрируем по горизонтали и вертикали */
+  background-repeat: no-repeat; /* без повторений */
+  background-size: cover; /* заполнение и пропорции */
 }
 
 .img-lot-left {
@@ -237,18 +240,55 @@ button:hover,
   background-image: url("../images/card-lot-03.jpg");
 }
 
-.overlay {
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
 .t-line {
   text-decoration: underline;
 }
 
 .more-button {
-  padding-left: 64px;
+  display: block;
+  padding: 11px 64px 0 64px;
   font-size: 20px;
-  text-underline-offset: 6px;
+  text-underline-offset: 4px;
+}
+
+/*    Стили блок О нас  */
+.container-about {
+  display: flex;
+  margin: 117px 0 154px;
+  /* padding: 35px 0 0 47px; */
+  flex-direction: row;
+  justify-content: start;
+}
+
+.logo-about {
+  /* flex: 0 0 240px; */
+  /* margin: 36px 0 0 71px; */
+  padding: 36px 71px;
+}
+
+.figure-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgb(0, 0, 0);
+}
+
+.logo-about img {
+  width: 148px;
+  height: 148px;
+}
+
+.content-about {
+  display: block;
+  margin: 38px 0 0 0px;
+}
+
+.title-about {
+  margin: 0px 0 0px;
+  padding: 101px 0 100px;
 }
 
 /* заглавные буквы */
@@ -256,50 +296,25 @@ button:hover,
   text-transform: uppercase;
 }
 
-/* Стили О НАС */
-.about-column {
-  margin-top: 135px;
-}
-
-.wrapper-about {
-  display: flex;
-  margin: 120px 24px 180px;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.frame-logo {
-  margin: 34px 72px 0 47px;
-}
-
-.figure-0 {
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  background: rgb(0, 0, 0);
-/*  overflow: hidden; */  
-}
-
-.image-center {
-  position: static;
-  transform: translate(32%, 57%);
-  width: 147px;
-}
-
-.about-text {
+.about--start {
   font-size: 20px;
-  padding-top: 100px;
+  padding-right: 30px;
+  padding-bottom: 25px;
+  text-align: left;
 }
 
-.about-padding {
-  padding: 0 3px 25px 0px;
+.about--end {
+  font-size: 20px;
+  padding-right: 1.5em;
+  padding-bottom: 25px;
+  text-align: left;
 }
 
-/* Стили Футер */
+/*      Стили Футер      */
 .futer-content {
   display: flex;
-  min-height: 180px;
   justify-content: space-between;
+  margin-bottom: 84px;
 }
 
 .contact-futer {
@@ -314,12 +329,17 @@ button:hover,
 .menu__futer {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
-.menu-text {
+.footer__menu-link {
+  list-style: none;
   font-size: 18px;
   text-underline-position: under;
+}
+
+.footer__menu-link_active {
+  text-decoration: none;
 }
 
 .socials {
@@ -327,6 +347,7 @@ button:hover,
   justify-content: flex-end;
   gap: 48px;
   padding-right: 50px;
+  list-style: none;
 }
 
 .logo-size {
