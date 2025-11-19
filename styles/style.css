@@ -304,10 +304,14 @@ button:hover,
 }
 
 .about--end {
-  font-size: 20px;
-  padding-right: 1.5em;
-  padding-bottom: 25px;
-  text-align: left;
+    font-size: 20px;
+    padding-right: 1.4em;
+    padding-bottom: 25px;
+    text-align: left;
+}
+
+.about--end span {
+  word-spacing: 0.1em;
 }
 
 /*      Стили Футер      */
