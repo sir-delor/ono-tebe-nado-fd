@@ -60,6 +60,11 @@ h3 {
   text-underline-position: under;
 }
 
+.header__menu-link:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
 .contact-header {
   max-width: 240px;
   justify-self: end;
@@ -374,6 +379,16 @@ button:hover,
 .footer__menu-link_active {
   text-decoration: none;
   color: black;
+}
+
+.footer__menu-link {
+  color: #000000;
+  padding: 0 10px;
+}
+
+.footer__menu-link:hover {
+  color: #0056b3;
+  text-decoration: none;
 }
 
 .socials {
